@@ -8,5 +8,7 @@ RUN adduser -s /bin/sh -D vscode && \
     mkdir /tmp/.config && \
     chown -R vscode /tmp/.config
 
+RUN apk add python3 mysql-client
+
 # Do something to keep the container alive
 CMD ["tail", "-f", "/dev/null"]
