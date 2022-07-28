@@ -10,3 +10,6 @@ RUN adduser -s /bin/sh -D vscode && \
 
 # Set vscdoe as the default user
 USER vscode
+
+# Do something to keep the container alive
+CMD ["tail", "-f", "/dev/null"]
