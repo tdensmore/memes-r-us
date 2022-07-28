@@ -1,0 +1,9 @@
+services:
+  python:
+    build: 
+      context: ./
+      target: dev
+    ports:
+      - 5000:5000
+    volumes:
+      - ./app:/usr/local/app
