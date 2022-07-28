@@ -8,8 +8,5 @@ RUN adduser -s /bin/sh -D vscode && \
     mkdir /tmp/.config && \
     chown -R vscode /tmp/.config
 
-# Set vscdoe as the default user
-USER vscode
-
 # Do something to keep the container alive
 CMD ["tail", "-f", "/dev/null"]
