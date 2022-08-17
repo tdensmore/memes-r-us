@@ -12,3 +12,10 @@ FROM base AS dev
 RUN pip install watchdog
 ENV FLASK_ENV=development
 CMD ["flask", "run", "--host=0.0.0.0"]
+
+
+
+# A stage used for deployment
+FROM base AS prod
+COPY src .
+CMD ["flask", "run", "--host=0.0.0.0"]
