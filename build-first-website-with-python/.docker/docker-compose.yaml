@@ -1,9 +1,9 @@
 services:
-  dev:
+  workspace:
     build: ./.docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./app:/com.docker.devenvironments.code/build-first-website-with-python/app
+      - ./src:/com.docker.devenvironments.code/build-first-website-with-python/src
 
   python:
     build: 
@@ -12,4 +12,4 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./app:/usr/local/app
+      - ./src:/usr/local/app
