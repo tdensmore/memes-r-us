@@ -1,5 +1,5 @@
 # A base stage that installs all of the base dependencies
-FROM python:alpine AS base
+FROM python:3.9-buster AS base
 WORKDIR /usr/local/app
 COPY app/requirements.txt .
 RUN pip install -r requirements.txt
