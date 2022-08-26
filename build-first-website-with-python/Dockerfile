@@ -17,5 +17,5 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 
 # A stage used for deployment
 FROM base AS prod
-COPY src .
+COPY app .
 CMD ["flask", "run", "--host=0.0.0.0"]
