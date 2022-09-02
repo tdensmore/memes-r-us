@@ -21,4 +21,5 @@ CMD ["sh", "-c", "pip install -r requirements.txt && flask run --host=0.0.0.0"]
 # A stage used for deployment
 FROM base AS prod
 COPY app .
+EXPOSE 5000
 CMD ["flask", "run", "--host=0.0.0.0"]
