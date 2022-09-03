@@ -5,8 +5,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./app:/com.docker.devenvironments.code/build-first-website-with-python/app
     labels:
-      com.docker.dev-env/service-type: workspace
-      com.docker.dev-env/service-name: Workspace
+      dev-environment/service-type: workspace
+      dev-environment/service-name: Workspace
 
   python:
     build: 
@@ -17,8 +17,8 @@ services:
     volumes:
       - ./app:/usr/local/app
     labels:
-      com.docker.dev-env/service-type: service
-      com.docker.dev-env/service-name: Python server
+      dev-environment/service-type: service
+      dev-environment/service-name: Python server
 
   mysql:
     image: mysql:latest
@@ -29,8 +29,8 @@ services:
       MYSQL_ROOT_PASSWORD: superSecret
       MYSQL_DATABASE: memes
     labels:
-      com.docker.dev-env/service-type: service
-      com.docker.dev-env/service-name: MySQL Database
+      dev-environment/service-type: service
+      dev-environment/service-name: MySQL Database
 
   phpmyadmin:
     image: phpmyadmin:latest
@@ -41,8 +41,8 @@ services:
       PMA_USER: root
       PMA_PASSWORD: superSecret
     labels:
-      com.docker.dev-env/service-type: service
-      com.docker.dev-env/service-name: phpMyAdmin
+      dev-environment/service-type: service
+      dev-environment/service-name: phpMyAdmin
 
 volumes:
   mysql-data:
