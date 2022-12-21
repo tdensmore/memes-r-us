@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     message = "Hello world!"
-    return render_template("index.html", message=message)
+    meme_url = "https://media.giphy.com/media/14hs7g86sQqDF6/giphy.gif"
+    return render_template("index.html", message=message, meme_url=meme_url)
 
 # This starts our Python app
 if __name__ == "__main__":
