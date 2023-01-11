@@ -3,7 +3,7 @@ services:
     build: ./.docker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./app:/com.docker.devenvironments.code/build-first-website-with-python/app
+      - ./app:/com.docker.devenvironments.code/app
     labels:
       dev-environment/service-type: workspace
       dev-environment/service-name: Workspace
