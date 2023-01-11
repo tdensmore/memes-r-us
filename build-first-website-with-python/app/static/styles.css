@@ -6,6 +6,10 @@ body {
   text-align: center;
 }
 
+#logo {
+  height: 50px;
+}
+
 #content {
   display: inline-block;
   border: 1px solid #ddd;
