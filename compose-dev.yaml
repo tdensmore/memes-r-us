@@ -1,12 +1,9 @@
 services:
   workspace:
-    build: ./.docker
+    build: ./dev
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./app:/com.docker.devenvironments.code/app
-    labels:
-      dev-environment/service-type: workspace
-      dev-environment/service-name: Workspace
 
   python:
     build: 
@@ -16,21 +13,15 @@ services:
       - 8000:5000
     volumes:
       - ./app:/usr/local/app
-    labels:
-      dev-environment/service-type: service
-      dev-environment/service-name: Python server
 
   mysql:
     image: mysql:latest
     volumes:
-      - ./.docker/db:/docker-entrypoint-initdb.d
+      - ./dev/db:/docker-entrypoint-initdb.d
       - mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: superSecret
       MYSQL_DATABASE: memes
-    labels:
-      dev-environment/service-type: service
-      dev-environment/service-name: MySQL Database
 
   phpmyadmin:
     image: phpmyadmin:latest
@@ -40,9 +31,6 @@ services:
       PMA_HOST: mysql
       PMA_USER: root
       PMA_PASSWORD: superSecret
-    labels:
-      dev-environment/service-type: service
-      dev-environment/service-name: phpMyAdmin
 
 volumes:
   mysql-data:
