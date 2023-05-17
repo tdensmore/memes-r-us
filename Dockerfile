@@ -14,7 +14,7 @@ FROM base AS dev
 # currently don't have a "refresh" or "rebuild" mechanism in place
 RUN pip install watchdog
 ENV FLASK_ENV=development
-CMD ["sh", "-c", "pip install -r requirements.txt && flask run --host=0.0.0.0"]
+CMD ["sh", "-c", "pip install -r requirements.txt && flask run --host=0.0.0.0 --debug"]
 
 
 
